@@ -27,7 +27,8 @@ class PinsController < ApplicationController
 
 
     def destroy
-        pin.destroy
+        @pin = Pin.find_by(id: params[:id])
+        @pin.destroy
         render json: {}
     end
 
