@@ -3,7 +3,14 @@ class PinsController < ApplicationController
 
     def index
         @pins = Pin.all
-        render json: @pins
+        render json: @pins.to_json(
+            :include=>{
+                :likes => {:only => [:id, :user_id]}
+            }, 
+            :except => [:updated_at, :created_at]
+        )
+        #json: @pins
+        
     end
 
     def show
@@ -17,13 +24,23 @@ class PinsController < ApplicationController
 
     def create
         pin = Pin.create(pin_params)
-        render json: pin
+        render json: pin.to_json(
+            :include=>{
+                :likes => {:only => [:id, :user_id]}
+            }, 
+            :except => [:updated_at, :created_at]
+        )
     end
 
     def update
         pin = Pin.find_by(id: params[:id])
         pin.update(pin_params)
-        render json: pin
+        render json: pin.to_json(
+            :include=>{
+                :likes => {:only => [:id, :user_id]}
+            }, 
+            :except => [:updated_at, :created_at]
+        )
     end
 
 
