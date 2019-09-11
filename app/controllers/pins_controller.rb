@@ -21,7 +21,8 @@ class PinsController < ApplicationController
     end
 
     def update
-        pin = Pin.update(pin_params)
+        pin = Pin.find_by(id: params[:id])
+        pin.update(pin_params)
         render json: pin
     end
 
