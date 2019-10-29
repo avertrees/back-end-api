@@ -12,8 +12,11 @@
 
 ActiveRecord::Schema.define(version: 2019_09_10_143050) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comments", force: :cascade do |t|
-    t.integer "pin_id"
+    t.bigint "pin_id"
     t.string "content"
     t.string "username"
     t.datetime "created_at", null: false
@@ -22,8 +25,8 @@ ActiveRecord::Schema.define(version: 2019_09_10_143050) do
   end
 
   create_table "likes", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "pin_id"
+    t.bigint "user_id"
+    t.bigint "pin_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["pin_id"], name: "index_likes_on_pin_id"
@@ -46,4 +49,7 @@ ActiveRecord::Schema.define(version: 2019_09_10_143050) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "comments", "pins"
+  add_foreign_key "likes", "pins"
+  add_foreign_key "likes", "users"
 end
