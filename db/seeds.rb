@@ -22,7 +22,23 @@ Pin.create(
             latitude: 37.776,
             description: "This is the Golden Gate Bridge",
             image_url: "https://cdn.vox-cdn.com/uploads/chorus_image/image/54936725/shutterstock_529749235.1495670520.jpg"
+        },
+        {
+            id: 7,
+            name: "kansas",
+            longitude: -97.96209411261306,
+            latitude: 36.63623222358859,
+            description: "...description...",
+            image_url: "https://images.unsplash.com/photo-1561599775-49806cd165c3?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=480&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=480"
+        },
+        {
+            name: "iowa",
+            longitude: -94.16710937500089,
+            latitude: 43.93550624164516,
+            description: "cold",
+            image_url: "https://images.unsplash.com/photo-1495473351003-ba0a460f7961?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=480&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=480",
         }
     ]    
   )
+
 
