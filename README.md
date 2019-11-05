@@ -29,12 +29,11 @@ _**Requirements**_
 * [PostgreSQL](https://www.postgresql.org)
 
 In your clone/fork of this repo:
-`
-bundle install
-rails db:create #creates database
-rails db:migrate #creates tables in db
-rails db:seed #creates seed data
-rails s #to run the server
-`
+
+* `bundle install`
+* `rails db:create #creates database`
+* `rails db:migrate #creates tables in db`
+* `rails db:seed #creates seed data`
+* `rails s #to run the server`
 
 The instructions for the front-end of this app are [here](https://github.com/avertrees/module-3-front-end). You'll need to clone/fork both repositories and change the fetch URLs if you want to change the API. Otherwise, the app will make calls to Heroku.
